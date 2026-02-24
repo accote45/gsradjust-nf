@@ -1,0 +1,44 @@
+# Adapter Manifest
+# 
+# This YAML file defines how your enrichment tool should be run
+# and how its output should be parsed to the standard schema.
+
+name: template_tool
+version: 1.0.0
+description: Template adapter for adding new enrichment tools to GSR-Adjust
+
+# Input requirements
+input_format: gmt  # Format of gene set file your tool accepts (gmt, json, bed, etc.)
+
+required_inputs:
+  # List any additional files your tool needs beyond the GMT file
+  # These should be specified in the adapter_config.json file
+  gwas_summary_stats: true
+  background_genes: false
+  reference_panel: false
+
+# Output specification - how to interpret your tool's main test statistic
+stat_type: enrichment_score  # Description of what your 'stat' represents
+higher_is_more_enriched: true  # Set to false if lower values = more enriched
+
+# Does your tool output p-values directly?
+supports_p_value: true  # If false, only standardized effects will be calculated
+
+# Execution
+command: bash run_adapter.sh  # Entry point script
+container: null  # Optional: Docker/Singularity image (e.g., docker://tool:1.0.0)
+
+# Pathway size constraints (optional)
+pathway_size:
+  min: 10  # Minimum genes per pathway
+  max: 500  # Maximum genes per pathway (null = no limit)
+
+# Environment variables (optional)
+environment:
+  OMP_NUM_THREADS: 1
+  MKL_NUM_THREADS: 1
+
+# Adapter metadata
+adapter_author: Your Name
+adapter_version: 1.0.0
+date_created: 2026-02-24

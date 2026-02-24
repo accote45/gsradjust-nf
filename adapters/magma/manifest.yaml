@@ -1,0 +1,26 @@
+name: magma
+version: 1.10
+description: MAGMA gene-set analysis for pathway enrichment
+
+input_format: gmt
+
+required_inputs:
+  gene_results_file: true  # MAGMA .genes.raw file from previous gene analysis
+  
+stat_type: beta
+higher_is_more_enriched: true
+supports_p_value: true
+
+command: bash run_adapter.sh
+container: null  # Requires module load magma_gwas/1.10 on HPC
+
+pathway_size:
+  min: 10
+  max: null
+
+environment:
+  OMP_NUM_THREADS: 1
+
+adapter_author: Your Name
+adapter_version: 1.0.0
+date_created: 2026-02-24

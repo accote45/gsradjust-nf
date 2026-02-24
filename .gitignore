@@ -1,0 +1,68 @@
+# Nextflow
+work/
+.nextflow*
+*.log
+.nextflow.log*
+timeline.html
+report.html
+trace.txt
+dag.svg
+results/
+pipeline_info/
+
+# R
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+
+# BiRewire temporary files
+**/birewire_temp/
+
+# Test outputs
+test_output.tsv
+test_results/
+test.gmt
+
+# Adapter outputs
+*_raw.txt
+*_raw_output.txt
+*.genes.annot
+*.genes.raw
+*.genes.out
+*.gsa.out
+*.summary
+
+# Config files with sensitive paths (keep templates)
+config/*_config.json
+!config/example_*.json
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
