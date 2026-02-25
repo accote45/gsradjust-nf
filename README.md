@@ -1,4 +1,4 @@
-# GSR-Adjust: Gene Set Randomization Adjustment for Pathway Enrichment
+# GSR: Gene Set Randomization Adjustment for Pathway Enrichment
 
 A tool-agnostic Nextflow pipeline for adjusting pathway enrichment results using Gene Set Randomization (GSR) to account for gene overlap and pathway structure.
 
